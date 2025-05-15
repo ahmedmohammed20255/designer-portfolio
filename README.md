@@ -1,56 +1,41 @@
-<div class="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6 border border-gray-200 mt-10">
-  <!-- الشعار -->
-  <div class="flex justify-center">
-    <img src="https://via.placeholder.com/100x100.png?text=Logo" alt="شعار المصمم أحمد عبد الله" class="w-24 h-24 rounded-full shadow">
-  </div>
+<div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md mt-8 border border-gray-200">
+  <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">إرسال إيصال الدفع</h2>
 
-  <!-- العنوان والوصف -->
-  <div class="text-center">
-    <h1 class="text-2xl font-bold text-gray-800">طلب تصميم شعار احترافي</h1>
-    <p class="text-gray-600 mt-2">تصميم مميز بصيغة احترافية PNG + ملف مفتوح PSD جاهز للطباعة والاستخدام الرقمي</p>
-  </div>
-
-  <!-- السعر -->
-  <div class="text-center bg-gray-100 rounded-lg py-3 px-6 text-xl font-semibold text-green-600 shadow-inner">
-    السعر: 150 ريال
-  </div>
-
-  <!-- طرق الدفع -->
-  <div class="space-y-4 mt-6">
-    <h2 class="text-xl font-bold text-gray-800 text-center">طرق الدفع</h2>
-
-    <!-- التحويل البنكي -->
-    <div class="bg-gray-50 p-4 rounded-lg border">
-      <h3 class="font-semibold text-gray-700 mb-1">💳 التحويل البنكي (مصرف الراجحي)</h3>
-      <p class="text-gray-600 break-words"><strong>رقم الآيبان:</strong> SA18 8000 0856 6081 1428 1691</p>
+  <form id="paymentReceiptForm" class="space-y-4" enctype="multipart/form-data" method="POST" action="/submit-payment">
+    <div>
+      <label for="name" class="block mb-1 font-semibold text-gray-700">الاسم الكامل</label>
+      <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل"
+        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
     </div>
 
-    <!-- STC Pay -->
-    <div class="bg-gray-50 p-4 rounded-lg border">
-      <h3 class="font-semibold text-gray-700 mb-1">📱 STC Pay</h3>
-      <p class="text-gray-600"><strong>رقم الجوال:</strong> 0570181782</p>
+    <div>
+      <label for="phone" class="block mb-1 font-semibold text-gray-700">رقم الجوال</label>
+      <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم جوالك"
+        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
     </div>
 
-    <!-- وسائل أخرى -->
-    <div class="bg-gray-50 p-4 rounded-lg border">
-      <h3 class="font-semibold text-gray-700 mb-1">💰 وسائل أخرى متاحة:</h3>
-      <ul class="list-disc list-inside text-gray-600">
-        <li>فوري</li>
-        <li>بطاقات</li>
-        
-      </ul>
+    <div>
+      <label for="paymentReceipt" class="block mb-1 font-semibold text-gray-700">تحميل إيصال الدفع</label>
+      <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*,application/pdf" required
+        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+      <p class="text-xs text-gray-500 mt-1">يمكنك رفع صورة أو ملف PDF للإيصال.</p>
     </div>
-  </div>
 
-  <!-- ملاحظة بعد الدفع -->
-  <div class="text-center mt-6 text-sm text-gray-500">
-    بعد الدفع، يُرجى إرسال إيصال الدفع عبر الواتساب أو من خلال النموذج داخل التطبيق لتأكيد الطلب.
-  </div>
-
-  <!-- زر CTA -->
-  <div class="text-center mt-4">
-    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-xl transition-all">
-      أرسل إيصال الدفع الآن
-    </button>
-  </div>
+    <div class="text-center">
+      <button type="submit"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-xl transition-all">
+        إرسال الإيصال
+      </button>
+    </div>
+  </form>
 </div>
+
+<script>
+  document.getElementById('paymentReceiptForm').addEventListener('submit', function(event) {
+    const fileInput = document.getElementById('paymentReceipt');
+    if (!fileInput.value) {
+      event.preventDefault();
+      alert('الرجاء رفع إيصال الدفع قبل الإرسال.');
+    }
+  });
+</script>
