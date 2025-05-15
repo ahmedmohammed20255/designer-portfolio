@@ -1,5 +1,10 @@
 <div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md mt-8 border border-gray-200">
-  <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">إرسال إيصال الدفع</h2>
+  <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">طرق الدفع</h2>
+
+  <div class="mb-6 space-y-3">
+    <p class="text-lg font-semibold">البنك: راجحي</p>
+    <p>رقم الحساب: <span class="font-mono">077010110006084281691</span></p>
+  </div>
 
   <form id="paymentReceiptForm" class="space-y-4" enctype="multipart/form-data" method="POST" action="/submit-payment">
     <div>
