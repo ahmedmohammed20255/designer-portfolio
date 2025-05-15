@@ -1,46 +1,43 @@
-<div class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md mt-8 border border-gray-200">
-  <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">طرق الدفع</h2>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>صفحة الدفع</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 font-sans">
 
-  <div class="mb-6 space-y-3">
-    <p class="text-lg font-semibold">البنك: راجحي</p>
-    <p>رقم الحساب: <span class="font-mono">077010110006084281691</span></p>
+  <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">طرق الدفع المتاحة</h1>
+
+    <div class="mb-6 border border-gray-200 rounded p-4 bg-gray-50">
+      <h2 class="text-xl font-semibold mb-2">بنك راجحي</h2>
+      <p>رقم الحساب: <span class="font-mono text-blue-600">077010110006084281691</span></p>
+      <p>اسم الحساب: المصمم أحمد عبد الله</p>
+    </div>
+
+    <div class="mb-6 border border-gray-200 rounded p-4 bg-gray-50">
+      <h2 class="text-xl font-semibold mb-2">STC Pay</h2>
+      <p>رقم الحساب: <span class="font-mono text-blue-600">0570181782</span></p>
+    </div>
+
+    <div class="mb-6 border border-gray-200 rounded p-4 bg-gray-50">
+      <h2 class="text-xl font-semibold mb-2">تمارا وتابي</h2>
+      <p>الدفع عند الاستلام أو بالتقسيط حسب اختيارك.</p>
+    </div>
+
+    <div class="mb-6 border border-gray-200 rounded p-4 bg-gray-50">
+      <h2 class="text-xl font-semibold mb-2">مميزات الدفع</h2>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>سهولة وسرعة في إتمام الدفع.</li>
+        <li>خيارات متعددة تناسب الجميع.</li>
+        <li>آمن ومضمون.</li>
+        <li>خدمة دعم على مدار الساعة.</li>
+      </ul>
+    </div>
+
   </div>
 
-  <form id="paymentReceiptForm" class="space-y-4" enctype="multipart/form-data" method="POST" action="/submit-payment">
-    <div>
-      <label for="name" class="block mb-1 font-semibold text-gray-700">الاسم الكامل</label>
-      <input type="text" id="name" name="name" required placeholder="أدخل اسمك الكامل"
-        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
-    </div>
-
-    <div>
-      <label for="phone" class="block mb-1 font-semibold text-gray-700">رقم الجوال</label>
-      <input type="tel" id="phone" name="phone" required placeholder="أدخل رقم جوالك"
-        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
-    </div>
-
-    <div>
-      <label for="paymentReceipt" class="block mb-1 font-semibold text-gray-700">تحميل إيصال الدفع</label>
-      <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*,application/pdf" required
-        class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
-      <p class="text-xs text-gray-500 mt-1">يمكنك رفع صورة أو ملف PDF للإيصال.</p>
-    </div>
-
-    <div class="text-center">
-      <button type="submit"
-        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-xl transition-all">
-        إرسال الإيصال
-      </button>
-    </div>
-  </form>
-</div>
-
-<script>
-  document.getElementById('paymentReceiptForm').addEventListener('submit', function(event) {
-    const fileInput = document.getElementById('paymentReceipt');
-    if (!fileInput.value) {
-      event.preventDefault();
-      alert('الرجاء رفع إيصال الدفع قبل الإرسال.');
-    }
-  });
-</script>
+</body>
+</html>
